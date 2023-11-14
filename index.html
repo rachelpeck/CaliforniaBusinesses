@@ -35,19 +35,19 @@
         <script src="js/tailDT.js"></script>
 <script src="js/nouislider.min.js"></script>
 <script src="js/wNumb.js"></script>
-        <script src="data/USStateBoundaries_0.js"></script>
+        <script src="data/California_0.js"></script>
         <script src="data/CaliforniaBusinessesbyEmployeeSize_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[28.83744774132296,-134.55139453883353],[45.792236694076365,-103.6932972097503]]);
+        }).fitBounds([[29.943609450276497,-134.7802555820653],[46.8983984030299,-103.92215825298206]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        function pop_USStateBoundaries_0(feature, layer) {
+        function pop_California_0(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
@@ -71,69 +71,63 @@
                         <td colspan="2">' + (feature.properties['SQMI'] !== null ? autolinker.link(feature.properties['SQMI'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Shape__Area'] !== null ? autolinker.link(feature.properties['Shape__Area'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Shape__Are'] !== null ? autolinker.link(feature.properties['Shape__Are'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Shape__Length'] !== null ? autolinker.link(feature.properties['Shape__Length'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Shape__Len'] !== null ? autolinker.link(feature.properties['Shape__Len'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_USStateBoundaries_0_0() {
+        function style_California_0_0() {
             return {
-                pane: 'pane_USStateBoundaries_0',
+                pane: 'pane_California_0',
                 opacity: 1,
-                color: 'rgba(110,110,110,1.0)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 3.0, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(57,57,57,1.0)',
+                fillColor: 'rgba(183,72,75,1.0)',
                 interactive: false,
             }
         }
-        map.createPane('pane_USStateBoundaries_0');
-        map.getPane('pane_USStateBoundaries_0').style.zIndex = 400;
-        map.getPane('pane_USStateBoundaries_0').style['mix-blend-mode'] = 'normal';
-        var layer_USStateBoundaries_0 = new L.geoJson(json_USStateBoundaries_0, {
+        map.createPane('pane_California_0');
+        map.getPane('pane_California_0').style.zIndex = 400;
+        map.getPane('pane_California_0').style['mix-blend-mode'] = 'normal';
+        var layer_California_0 = new L.geoJson(json_California_0, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_USStateBoundaries_0',
-            layerName: 'layer_USStateBoundaries_0',
-            pane: 'pane_USStateBoundaries_0',
-            onEachFeature: pop_USStateBoundaries_0,
-            style: style_USStateBoundaries_0_0,
+            dataVar: 'json_California_0',
+            layerName: 'layer_California_0',
+            pane: 'pane_California_0',
+            onEachFeature: pop_California_0,
+            style: style_California_0_0,
         });
-        bounds_group.addLayer(layer_USStateBoundaries_0);
-        map.addLayer(layer_USStateBoundaries_0);
+        bounds_group.addLayer(layer_California_0);
+        map.addLayer(layer_California_0);
         function pop_CaliforniaBusinessesbyEmployeeSize_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Company Name</th>\
-                        <td>' + (feature.properties['company_na'] !== null ? autolinker.link(feature.properties['company_na'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['company_na'] !== null ? autolinker.link(feature.properties['company_na'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">City</th>\
-                        <td>' + (feature.properties['city'] !== null ? autolinker.link(feature.properties['city'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['city'] !== null ? autolinker.link(feature.properties['city'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">State</th>\
-                        <td>' + (feature.properties['state'] !== null ? autolinker.link(feature.properties['state'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['state'] !== null ? autolinker.link(feature.properties['state'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Estimated Company Value ($ USD)</th>\
-                        <td>' + (feature.properties['company_sa'] !== null ? autolinker.link(feature.properties['company_sa'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['company_sa'] !== null ? autolinker.link(feature.properties['company_sa'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Industry</th>\
-                        <td>' + (feature.properties['naics_desc'] !== null ? autolinker.link(feature.properties['naics_desc'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['naics_desc'] !== null ? autolinker.link(feature.properties['naics_desc'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Number of Employees</th>\
-                        <td>' + (feature.properties['Employees'] !== null ? autolinker.link(feature.properties['Employees'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Employees'] !== null ? autolinker.link(feature.properties['Employees'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -267,7 +261,7 @@
             };
             abstract.addTo(map);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'California Businesses by Employee Size<br /><table><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_010.png" /></td><td>0 - 1</td></tr><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_121.png" /></td><td>1 - 2</td></tr><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_242.png" /></td><td>2 - 4</td></tr><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_4103.png" /></td><td>4 - 10</td></tr><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_1014004.png" /></td><td>10 - 1400</td></tr></table>': layer_CaliforniaBusinessesbyEmployeeSize_1,'<img src="legend/USStateBoundaries_0.png" /> US State Boundaries': layer_USStateBoundaries_0,}).addTo(map);
+        L.control.layers(baseMaps,{'California Businesses by Employee Size<br /><table><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_010.png" /></td><td>0 - 1</td></tr><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_121.png" /></td><td>1 - 2</td></tr><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_242.png" /></td><td>2 - 4</td></tr><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_4103.png" /></td><td>4 - 10</td></tr><tr><td style="text-align: center;"><img src="legend/CaliforniaBusinessesbyEmployeeSize_1_1014004.png" /></td><td>10 - 1400</td></tr></table>': layer_CaliforniaBusinessesbyEmployeeSize_1,'<img src="legend/California_0.png" /> California': layer_California_0,}).addTo(map);
         setBounds();
         var mapDiv = document.getElementById('map');
         var row = document.createElement('div');
@@ -288,7 +282,7 @@
         document.getElementById("all").appendChild(col1);
         document.getElementById("all").appendChild(col2);
         col1.appendChild(mapDiv)
-        var Filters = {"company_sa": "str"};
+        var Filters = {"naics_desc": "str","company_sa": "str"};
         function filterFunc() {
           map.eachLayer(function(lyr){
           if ("options" in lyr && "dataVar" in lyr["options"]){
@@ -378,6 +372,137 @@
           }
           })
         }
+            document.getElementById("menu").appendChild(
+                document.createElement("div"));
+            var div_naics_desc = document.createElement('div');
+            div_naics_desc.id = "div_naics_desc";
+            div_naics_desc.className= "filterselect";
+            document.getElementById("menu").appendChild(div_naics_desc);
+            sel_naics_desc = document.createElement('select');
+            sel_naics_desc.multiple = true;
+            sel_naics_desc.size = 10;
+            sel_naics_desc.id = "sel_naics_desc";
+            var naics_desc_options_str = "<option value='' unselected></option>";
+            sel_naics_desc.onchange = function(){filterFunc()};
+            naics_desc_options_str  += '<option value="All Other Automotive Repair and Maintenance">All Other Automotive Repair and Maintenance</option>';
+            naics_desc_options_str  += '<option value="All Other Business Support Services">All Other Business Support Services</option>';
+            naics_desc_options_str  += '<option value="All Other Information Services">All Other Information Services</option>';
+            naics_desc_options_str  += '<option value="All Other Miscellaneous Ambulatory Health Care Services">All Other Miscellaneous Ambulatory Health Care Services</option>';
+            naics_desc_options_str  += '<option value="All Other Miscellaneous Food Manufacturing">All Other Miscellaneous Food Manufacturing</option>';
+            naics_desc_options_str  += '<option value="All Other Miscellaneous Store Retailers (except Tobacco Stores)">All Other Miscellaneous Store Retailers (except Tobacco Stores)</option>';
+            naics_desc_options_str  += '<option value="All Other Specialty Trade Contractors">All Other Specialty Trade Contractors</option>';
+            naics_desc_options_str  += '<option value="All Other Support Activities for Transportation">All Other Support Activities for Transportation</option>';
+            naics_desc_options_str  += '<option value="All Other Telecommunications">All Other Telecommunications</option>';
+            naics_desc_options_str  += '<option value="Architectural Services">Architectural Services</option>';
+            naics_desc_options_str  += '<option value="Automotive Parts and Accessories Stores">Automotive Parts and Accessories Stores</option>';
+            naics_desc_options_str  += '<option value="Book, Periodical, and Newspaper Merchant Wholesalers">Book, Periodical, and Newspaper Merchant Wholesalers</option>';
+            naics_desc_options_str  += '<option value="Bowling Centers">Bowling Centers</option>';
+            naics_desc_options_str  += '<option value="Business Associations">Business Associations</option>';
+            naics_desc_options_str  += '<option value="Cable and Other Subscription Programming">Cable and Other Subscription Programming</option>';
+            naics_desc_options_str  += '<option value="Car Washes">Car Washes</option>';
+            naics_desc_options_str  += '<option value="Caterers">Caterers</option>';
+            naics_desc_options_str  += '<option value="Civic and Social Organizations">Civic and Social Organizations</option>';
+            naics_desc_options_str  += '<option value="Commercial Printing (except Screen and Books)">Commercial Printing (except Screen and Books)</option>';
+            naics_desc_options_str  += '<option value="Commercial and Institutional Building Construction">Commercial and Institutional Building Construction</option>';
+            naics_desc_options_str  += '<option value="Computer Systems Design Services">Computer Systems Design Services</option>';
+            naics_desc_options_str  += '<option value="Computer and Computer Peripheral Equipment and Software Merchant Wholesalers">Computer and Computer Peripheral Equipment and Software Merchant Wholesalers</option>';
+            naics_desc_options_str  += '<option value="Consumer Electronics Repair and Maintenance">Consumer Electronics Repair and Maintenance</option>';
+            naics_desc_options_str  += '<option value="Custom Computer Programming Services">Custom Computer Programming Services</option>';
+            naics_desc_options_str  += '<option value="Drinking Places (Alcoholic Beverages)">Drinking Places (Alcoholic Beverages)</option>';
+            naics_desc_options_str  += '<option value="Drywall and Insulation Contractors">Drywall and Insulation Contractors</option>';
+            naics_desc_options_str  += '<option value="Electronics Stores">Electronics Stores</option>';
+            naics_desc_options_str  += '<option value="Elementary and Secondary Schools">Elementary and Secondary Schools</option>';
+            naics_desc_options_str  += '<option value="Engineering Services">Engineering Services</option>';
+            naics_desc_options_str  += '<option value="Environmental Consulting Services">Environmental Consulting Services</option>';
+            naics_desc_options_str  += '<option value="Exterminating and Pest Control Services">Exterminating and Pest Control Services</option>';
+            naics_desc_options_str  += '<option value="Fabricated Pipe and Pipe Fitting Manufacturing">Fabricated Pipe and Pipe Fitting Manufacturing</option>';
+            naics_desc_options_str  += '<option value="Fats and Oils Refining and Blending">Fats and Oils Refining and Blending</option>';
+            naics_desc_options_str  += '<option value="Finish Carpentry Contractors">Finish Carpentry Contractors</option>';
+            naics_desc_options_str  += '<option value="Flooring Contractors">Flooring Contractors</option>';
+            naics_desc_options_str  += '<option value="Florists">Florists</option>';
+            naics_desc_options_str  += '<option value="Fresh Fruit and Vegetable Merchant Wholesalers">Fresh Fruit and Vegetable Merchant Wholesalers</option>';
+            naics_desc_options_str  += '<option value="Full-Service Restaurants">Full-Service Restaurants</option>';
+            naics_desc_options_str  += '<option value="Funeral Homes and Funeral Services">Funeral Homes and Funeral Services</option>';
+            naics_desc_options_str  += '<option value="General Automotive Repair">General Automotive Repair</option>';
+            naics_desc_options_str  += '<option value="Home Centers">Home Centers</option>';
+            naics_desc_options_str  += '<option value="Industrial Process Furnace and Oven Manufacturing">Industrial Process Furnace and Oven Manufacturing</option>';
+            naics_desc_options_str  += '<option value="Industrial Supplies Merchant Wholesalers">Industrial Supplies Merchant Wholesalers</option>';
+            naics_desc_options_str  += '<option value="Insurance Agencies and Brokerages">Insurance Agencies and Brokerages</option>';
+            naics_desc_options_str  += '<option value="Interior Design Services">Interior Design Services</option>';
+            naics_desc_options_str  += '<option value="Investigation Services">Investigation Services</option>';
+            naics_desc_options_str  += '<option value="Janitorial Services">Janitorial Services</option>';
+            naics_desc_options_str  += '<option value="Landscape Architectural Services">Landscape Architectural Services</option>';
+            naics_desc_options_str  += '<option value="Landscaping Services">Landscaping Services</option>';
+            naics_desc_options_str  += '<option value="Lessors of Nonresidential Buildings (except Miniwarehouses)">Lessors of Nonresidential Buildings (except Miniwarehouses)</option>';
+            naics_desc_options_str  += '<option value="Lessors of Residential Buildings and Dwellings">Lessors of Residential Buildings and Dwellings</option>';
+            naics_desc_options_str  += '<option value="Limited-Service Restaurants">Limited-Service Restaurants</option>';
+            naics_desc_options_str  += '<option value="Marketing Consulting Services">Marketing Consulting Services</option>';
+            naics_desc_options_str  += '<option value="Medical Laboratories">Medical Laboratories</option>';
+            naics_desc_options_str  += '<option value="Metal Coating, Engraving (except Jewelry and Silverware), and Allied Services to Manufacturers">Metal Coating, Engraving (except Jewelry and Silverware), and Allied Services to Manufacturers</option>';
+            naics_desc_options_str  += '<option value="Miscellaneous Intermediation">Miscellaneous Intermediation</option>';
+            naics_desc_options_str  += '<option value="New Car Dealers">New Car Dealers</option>';
+            naics_desc_options_str  += '<option value="New Housing For-Sale Builders">New Housing For-Sale Builders</option>';
+            naics_desc_options_str  += '<option value="Nonscheduled Chartered Freight Air Transportation">Nonscheduled Chartered Freight Air Transportation</option>';
+            naics_desc_options_str  += '<option value="Office Administrative Services">Office Administrative Services</option>';
+            naics_desc_options_str  += '<option value="Office Supplies (except Paper) Manufacturing">Office Supplies (except Paper) Manufacturing</option>';
+            naics_desc_options_str  += '<option value="Offices of Chiropractors">Offices of Chiropractors</option>';
+            naics_desc_options_str  += '<option value="Offices of Lawyers">Offices of Lawyers</option>';
+            naics_desc_options_str  += '<option value="Offices of Physicians (except Mental Health Specialists)">Offices of Physicians (except Mental Health Specialists)</option>';
+            naics_desc_options_str  += '<option value="Offices of Real Estate Agents and Brokers">Offices of Real Estate Agents and Brokers</option>';
+            naics_desc_options_str  += '<option value="Other Accounting Services">Other Accounting Services</option>';
+            naics_desc_options_str  += '<option value="Other Business Service Centers (including Copy Shops)">Other Business Service Centers (including Copy Shops)</option>';
+            naics_desc_options_str  += '<option value="Other Chemical and Allied Products Merchant Wholesalers">Other Chemical and Allied Products Merchant Wholesalers</option>';
+            naics_desc_options_str  += '<option value="Other Electronic Parts and Equipment Merchant Wholesalers">Other Electronic Parts and Equipment Merchant Wholesalers</option>';
+            naics_desc_options_str  += '<option value="Other Heavy and Civil Engineering Construction">Other Heavy and Civil Engineering Construction</option>';
+            naics_desc_options_str  += '<option value="Other Individual and Family Services">Other Individual and Family Services</option>';
+            naics_desc_options_str  += '<option value="Other Management Consulting Services">Other Management Consulting Services</option>';
+            naics_desc_options_str  += '<option value="Other Miscellaneous Nondurable Goods Merchant Wholesalers">Other Miscellaneous Nondurable Goods Merchant Wholesalers</option>';
+            naics_desc_options_str  += '<option value="Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)">Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)</option>';
+            naics_desc_options_str  += '<option value="Other Social Advocacy Organizations">Other Social Advocacy Organizations</option>';
+            naics_desc_options_str  += '<option value="Packing and Crating">Packing and Crating</option>';
+            naics_desc_options_str  += '<option value="Painting and Wall Covering Contractors">Painting and Wall Covering Contractors</option>';
+            naics_desc_options_str  += '<option value="Pharmaceutical Preparation Manufacturing">Pharmaceutical Preparation Manufacturing</option>';
+            naics_desc_options_str  += '<option value="Photography Studios, Portrait">Photography Studios, Portrait</option>';
+            naics_desc_options_str  += '<option value="Plumbing, Heating, and Air-Conditioning Contractors">Plumbing, Heating, and Air-Conditioning Contractors</option>';
+            naics_desc_options_str  += '<option value="Poured Concrete Foundation and Structure Contractors">Poured Concrete Foundation and Structure Contractors</option>';
+            naics_desc_options_str  += '<option value="Private Mail Centers">Private Mail Centers</option>';
+            naics_desc_options_str  += '<option value="Professional Organizations">Professional Organizations</option>';
+            naics_desc_options_str  += '<option value="Psychiatric and Substance Abuse Hospitals">Psychiatric and Substance Abuse Hospitals</option>';
+            naics_desc_options_str  += '<option value="Pump and Pumping Equipment Manufacturing">Pump and Pumping Equipment Manufacturing</option>';
+            naics_desc_options_str  += '<option value="Religious Organizations">Religious Organizations</option>';
+            naics_desc_options_str  += '<option value="Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)">Research and Development in the Physical, Engineering, and Life Sciences (except Biotechnology)</option>';
+            naics_desc_options_str  += '<option value="Residential Remodelers">Residential Remodelers</option>';
+            naics_desc_options_str  += '<option value="Roofing Contractors">Roofing Contractors</option>';
+            naics_desc_options_str  += '<option value="Software Publishers">Software Publishers</option>';
+            naics_desc_options_str  += '<option value="Sporting Goods Stores">Sporting Goods Stores</option>';
+            naics_desc_options_str  += '<option value="Tobacco Stores">Tobacco Stores</option>';
+            naics_desc_options_str  += '<option value="Travel Agencies">Travel Agencies</option>';
+            naics_desc_options_str  += '<option value="Trusts, Estates, and Agency Accounts">Trusts, Estates, and Agency Accounts</option>';
+            naics_desc_options_str  += '<option value="Unclassified Establishments">Unclassified Establishments</option>';
+            naics_desc_options_str  += '<option value="Urethane and Other Foam Product (except Polystyrene) Manufacturing">Urethane and Other Foam Product (except Polystyrene) Manufacturing</option>';
+            naics_desc_options_str  += '<option value="Used Household and Office Goods Moving">Used Household and Office Goods Moving</option>';
+            naics_desc_options_str  += '<option value="Used Merchandise Stores">Used Merchandise Stores</option>';
+            naics_desc_options_str  += '<option value="Wineries">Wineries</option>';
+            naics_desc_options_str  += '<option value="Wired Telecommunications Carriers">Wired Telecommunications Carriers</option>';
+            naics_desc_options_str  += '<option value="Women&apos;s Clothing Stores">Women&apos;s Clothing Stores</option>';
+            naics_desc_options_str  += '<option value="Wood Kitchen Cabinet and Countertop Manufacturing">Wood Kitchen Cabinet and Countertop Manufacturing</option>';
+            sel_naics_desc.innerHTML = naics_desc_options_str;
+            div_naics_desc.appendChild(sel_naics_desc);
+            var lab_naics_desc = document.createElement('div');
+            lab_naics_desc.innerHTML = 'naics_desc';
+            lab_naics_desc.className = 'filterlabel';
+            div_naics_desc.appendChild(lab_naics_desc);
+            var reset_naics_desc = document.createElement('div');
+            reset_naics_desc.innerHTML = 'clear filter';
+            reset_naics_desc.className = 'filterlabel';
+            reset_naics_desc.onclick = function() {
+                var options = document.getElementById("sel_naics_desc").options;
+                for (var i=0; i < options.length; i++) {
+                    options[i].selected = false;
+                }
+                filterFunc();
+            };
+            div_naics_desc.appendChild(reset_naics_desc);
             document.getElementById("menu").appendChild(
                 document.createElement("div"));
             var div_company_sa = document.createElement('div');
